@@ -1,9 +1,13 @@
-import { UserButton } from "@clerk/nextjs";
+'use client'
+
+import { useGetAccounts } from "@/features/accounts/api/use-get-accounts";
 
 export default function Home() {
+   const accontQuery = useGetAccounts()
+  
   return (
     <div>
-      Dashboard
+    Home Page
     </div>
   );
 }
