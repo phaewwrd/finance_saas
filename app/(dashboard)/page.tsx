@@ -1,13 +1,14 @@
-'use client'
+"use client";
 
-import { useGetAccounts } from "@/features/accounts/api/use-get-accounts";
+import { Button } from "@/components/ui/button";
+import { useNewAccount } from "@/features/accounts/api/hooks/use-new-account";
 
 export default function Home() {
-   const accontQuery = useGetAccounts()
-  
+  const { onOpen } = useNewAccount();
+ 
   return (
     <div>
-    Home Page
+      <Button onClick={onOpen}>Add new account</Button>
     </div>
   );
 }

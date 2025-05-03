@@ -20,7 +20,7 @@ const routes = [
     label: "Transactions",
   },
   {
-    href: "/acconts",
+    href: "/accounts",
     label: "Acccounts",
   },
   {

@@ -13,7 +13,7 @@ type Props = {
     children: React.ReactNode;
   }
 
-export default function QueryProvider({children}: Props ) {
+export const QueryProvider = ({children}: Props ) => {
   // Instead do this, which ensures each request has its own cache:
   const [queryClient] = useState(
     () =>

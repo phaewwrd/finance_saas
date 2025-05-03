@@ -6,7 +6,6 @@ import { HTTPException } from "hono/http-exception"
 
 import { db } from "@/db/drizzel";
 import { accounts, insertAccountSchema } from "@/db/schema";
-import { use } from "react";
 
 const app = new Hono();
 
@@ -43,12 +42,12 @@ app.post("/",
   }
 
   const data = await db.insert(accounts).values({
-    id: "test",
+    id: "111",
     userId: auth.userId,
     ...values,
   })
 
-  return c.json({})
+  return c.json({data})
   }
 )
 

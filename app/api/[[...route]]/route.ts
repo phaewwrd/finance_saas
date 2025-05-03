@@ -8,7 +8,7 @@ import { HTTPException } from 'hono/http-exception'
 
 export const runtime = 'edge'
 
-const app = new Hono().basePath('/api')
+const app = new Hono().basePath("/api")
 
 app.onError((err, c) =>{
     if( err instanceof HTTPException){
@@ -18,7 +18,7 @@ app.onError((err, c) =>{
     return c.json({ error: "Internal error"}, 500)
 })
 
-app.route("/accounts", accounts)
+const routes = app.route("/accounts", accounts)
 
 
 export const GET = handle(app)
