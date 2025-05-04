@@ -1,5 +1,5 @@
-// lib/hono.ts
-import { hc } from 'hono/client'
-import type { AppType } from '@/types/app'
+import { hc } from "hono/client";
 
-export const client = hc<AppType>(process.env.NEXT_PUBLIC_APP_URL!)
+import { AppType } from "@/app/api/[[...route]]/route";
+
+export const client = hc<AppType>(process.env.NEXT_PUBLIC_APP_URL!);

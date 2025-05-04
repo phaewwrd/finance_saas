@@ -1,5 +1,6 @@
 // types/app.ts
 import type { Hono } from 'hono'
+import type { BlankEnv, BlankSchema } from 'hono/types'
 
-// สร้าง type จาก Hono โดยตรง (แนะนำถ้าไม่อยาก hard link กับ route.ts)
-export type AppType = Hono;
+// Define AppType with proper generic parameters
+export type AppType = Hono<BlankEnv, BlankSchema, "/api">;
