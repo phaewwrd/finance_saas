@@ -12,6 +12,7 @@ import {
   FormField,
   FormItem,
   FormLabel,
+  FormMessage,
 } from "@/components/ui/form";
 
 const formSchema = insertCategorySchema.pick({
@@ -23,7 +24,7 @@ type FormValues = z.input<typeof formSchema>;
 type Props = {
   id?: string;
   defaultValues?: FormValues;
-  onSubmit: (values: FormValues) => void;
+  onSubmit: (data: FormValues) => void;
   onDelete?: () => void;
   disabled?: boolean;
 };
@@ -37,11 +38,11 @@ export const CategoryForm = ({
 }: Props) => {
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: defaultValues,
+    defaultValues,
   });
 
-  const handleSubmit = (values: FormValues) => {
-    onSubmit(values)
+  const handleSubmit = (data: FormValues) => {
+    onSubmit(data);
   };
 
   const handleDelete = () => {
@@ -63,18 +64,16 @@ export const CategoryForm = ({
               <FormControl>
                 <Input
                   disabled={disabled}
-                  placeholder="e.g Food, Travel, etc."
+                  placeholder="e.g. Food, Travel, etc."
                   {...field}
                 />
               </FormControl>
             </FormItem>
           )}
         />
-
         <Button className="w-full" disabled={disabled}>
-          {id ? "Save Changes" : "Create Category"}
+          {id ? " Save changes " : " Create category "}
         </Button>
-
         {!!id && (
           <Button
             type="button"

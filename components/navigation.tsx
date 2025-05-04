@@ -1,12 +1,13 @@
 "use client";
-import { usePathname, useRouter } from "next/navigation";
+
 import { useState } from "react";
 import { useMedia } from "react-use";
-import { Menu } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
 
-import { Button } from "@/components/ui/button";
-import NavButton from "./nav-button";
+import { NavButton } from "@/components/nav-button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
+import { Menu } from "lucide-react";
 
 const routes = [
   {
@@ -25,13 +26,9 @@ const routes = [
     href: "/categories",
     label: "Categories",
   },
-  {
-    href: "/settings",
-    label: "Settings",
-  },
 ];
 
-const Navigation = () => {
+export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const router = useRouter();
@@ -48,9 +45,9 @@ const Navigation = () => {
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetTrigger>
           <Button
-            size="sm"
             variant="outline"
-            className=" font-normal text-white/10 bg-white/20 hover:text-black border-none focus-visible:ring-offset-0 focus-visible:ring-transparent outline-none text-white focus:bg-white/30 transition"
+            size="sm"
+            className="font-normal bg-white/10 hover:bg-white/20 hover:text-white border-none focus-visible:ring-offset-0 focus-visible:ring-transparent outline-none text-white focus:bg-white/30 transition"
           >
             <Menu className="size-4" />
           </Button>
@@ -74,10 +71,7 @@ const Navigation = () => {
   }
 
   return (
-    <nav
-      className="hiddetn lg:flex items-center gap-x-2 
-    overflow-x-auto"
-    >
+    <nav className="hidden lg:flex items-center gap-x-2 overflow-x-auto">
       {routes.map((route) => (
         <NavButton
           key={route.href}
@@ -89,5 +83,3 @@ const Navigation = () => {
     </nav>
   );
 };
-
-export default Navigation;
