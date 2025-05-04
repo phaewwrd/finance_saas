@@ -1,5 +1,21 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Main features
+
+- Build with Nextjs14
+- Data validator with zod
+- Authentication by clerk
+- Interactive dashboard page
+- Changeable chart types
+- Accounts and Date filters
+- Hono api interfaces
+- Custom React form
+- CSV file import
+- CSS with Tailwindcss and Shadcn UI
+- NenoDB and Drizzle ORM
+- Deployed on Vercel
+
+
 ## Getting Started
 
 First, run the development server:
